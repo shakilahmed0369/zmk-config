@@ -1,23 +1,10 @@
 # Lily58 split keyboard — shield Kconfig
 #
-# Defines the configuration symbols for the Lily58 left and right halves.
-# Processed by the ZMK build system when SHIELD=lily58_left or lily58_right.
+# Declares the SHIELD_LILY58_LEFT / SHIELD_LILY58_RIGHT bool symbols so they
+# are visible to if-guards in Kconfig.defconfig and the rest of the build.
 
-if SHIELD_LILY58_LEFT || SHIELD_LILY58_RIGHT
+config SHIELD_LILY58_LEFT
+	def_bool $(shields_list_contains,lily58_left)
 
-config ZMK_KEYBOARD_NAME
-    default "Lily58"
-
-# Enable ZMK split keyboard support for both halves.
-config ZMK_SPLIT
-    default y
-
-if SHIELD_LILY58_LEFT
-
-# The left half is the central (USB/BLE host that runs the full keymap).
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
-
-endif # SHIELD_LILY58_LEFT
-
-endif # SHIELD_LILY58_LEFT || SHIELD_LILY58_RIGHT
+config SHIELD_LILY58_RIGHT
+	def_bool $(shields_list_contains,lily58_right)
