@@ -1,0 +1,60 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/*
+ * Lily58 — LEFT half overlay (central side)
+ *
+ * The left half acts as the BLE/USB central.
+ * col-offset = 0  →  this half's columns map to cols 0-5 in the combined matrix.
+ *
+ * Left-half column mapping:
+ *   physical col 0 → combined col 0   (unused in row 4)
+ *   physical col 1 → combined col 1   (thumb: ALT)
+ *   physical col 2 → combined col 2   (thumb: GUI)
+ *   physical col 3 → combined col 3   (thumb: LOWER)
+ *   physical col 4 → combined col 4   (thumb: SPACE)
+ *   physical col 5 → combined col 5   (inner bracket: "[")
+ */
+
+#include "lily58.dtsi"
+
+&default_transform {
+    col-offset = <0>;
+};
+
+/*
+ * ── Optional: Rotary Encoder ────────────────────────────────────────────────
+ * 1. Uncomment the block below to enable the left encoder.
+ * 2. Adjust a-gpios / b-gpios if your wiring differs.
+ * 3. In lily58.keymap, keep `sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;`
+ *    on the layers where you want encoder behaviour.
+ */
+// &left_encoder { status = "okay"; };
+
+/*
+ * ── Optional: OLED Display (SSD1306, 128×32, I2C address 0x3C) ─────────────
+ * Uncomment to enable the OLED on the left half.
+ * Requires CONFIG_ZMK_DISPLAY=y in config/lily58.conf.
+ */
+// &pro_micro_i2c {
+//     status = "okay";
+//
+//     oled_left: ssd1306@3c {
+//         compatible = "solomon,ssd1306fb";
+//         reg = <0x3c>;
+//         width = <128>;
+//         height = <32>;
+//         segment-offset = <0>;
+//         page-offset = <0>;
+//         display-offset = <0>;
+//         multiplex-ratio = <31>;
+//         segment-remap;
+//         com-invdir;
+//         com-sequential;
+//         prechargep = <0x22>;
+//         label = "OLED_LEFT";
+//     };
+// };

@@ -1,0 +1,115 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+/*
+ * Lily58 — shared hardware description
+ *
+ * Physical matrix per half: 5 rows × 6 cols (30 positions, 1 unused)
+ * Combined matrix (split join): 5 rows × 12 cols = 58 active keys
+ *
+ * GPIO → Pro Micro (Arduino) pin mapping:
+ *   Row 0 → D6   (nRF52840 P1.07 on nice!nano v2)
+ *   Row 1 → D7   (nRF52840 P1.08)
+ *   Row 2 → D8   (nRF52840 P1.04)
+ *   Row 3 → D9   (nRF52840 P1.06)
+ *   Row 4 → D10  (nRF52840 P0.09)  — thumb cluster + inner bracket key
+ *   Col 0 → A3   (nRF52840 P0.31)
+ *   Col 1 → A2   (nRF52840 P0.29)
+ *   Col 2 → A1   (nRF52840 P0.02)
+ *   Col 3 → A0   (nRF52840 P0.28)
+ *   Col 4 → D15  (nRF52840 P1.13)
+ *   Col 5 → D14  (nRF52840 P1.15)
+ *
+ * Matrix transform key:
+ *   Row 4, Col 5 → Left "[" bracket  (left half only)
+ *   Row 4, Col 0 → Right "]" bracket (right half only, becomes col 6 after offset)
+ *   Row 4, Cols 1-4 → Thumb cluster per half
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+    chosen {
+        zmk,kscan = &kscan0;
+        zmk,matrix_transform = &default_transform;
+    };
+
+    /*
+     * Combined 5-row × 12-col logical matrix
+     *
+     * Physical layout (L = left half, R = right half):
+     *  Row 0:  L[0-5]                         R[6-11]
+     *  Row 1:  L[0-5]                         R[6-11]
+     *  Row 2:  L[0-5]                         R[6-11]
+     *  Row 3:  L[0-5] + L-Bracket(4,5)   R-Bracket(4,6) + R[6-11]
+     *  Row 4:  (4,0)unused L-Thumb(4,1-4)     R-Thumb(4,7-10) (4,11)unused
+     */
+    default_transform: keymap_transform_0 {
+        compatible = "zmk,matrix-transform";
+        columns = <12>;
+        rows = <5>;
+
+        map = <
+RC(0,0)  RC(0,1)  RC(0,2)  RC(0,3)  RC(0,4)  RC(0,5)                                   RC(0,6)  RC(0,7)  RC(0,8)  RC(0,9)  RC(0,10) RC(0,11)
+RC(1,0)  RC(1,1)  RC(1,2)  RC(1,3)  RC(1,4)  RC(1,5)                                   RC(1,6)  RC(1,7)  RC(1,8)  RC(1,9)  RC(1,10) RC(1,11)
+RC(2,0)  RC(2,1)  RC(2,2)  RC(2,3)  RC(2,4)  RC(2,5)                                   RC(2,6)  RC(2,7)  RC(2,8)  RC(2,9)  RC(2,10) RC(2,11)
+RC(3,0)  RC(3,1)  RC(3,2)  RC(3,3)  RC(3,4)  RC(3,5)  RC(4,5)        RC(4,6)           RC(3,6)  RC(3,7)  RC(3,8)  RC(3,9)  RC(3,10) RC(3,11)
+                            RC(4,1)  RC(4,2)  RC(4,3)  RC(4,4)        RC(4,7)           RC(4,8)  RC(4,9)  RC(4,10)
+        >;
+    };
+
+    /*
+     * Rotary encoder nodes — disabled by default.
+     * Enable in the appropriate overlay and wire A/B to free GPIO pins.
+     * When enabled, also add `zmk,keymap-sensors` and `sensor-bindings`
+     * to your keymap file.
+     */
+    left_encoder: encoder_left {
+        compatible = "alps,ec11";
+        a-gpios = <&pro_micro 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+        status = "disabled";
+    };
+
+    right_encoder: encoder_right {
+        compatible = "alps,ec11";
+        a-gpios = <&pro_micro 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+        status = "disabled";
+    };
+
+    /*
+     * Key-switch matrix
+     * diode direction: col → row (col2row)
+     *   col-gpios  = outputs (driven high one at a time)
+     *   row-gpios  = inputs  (sensed with pull-down)
+     */
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+
+        diode-direction = "col2row";
+
+        row-gpios
+            = <&pro_micro 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 0 — D6  */
+            , <&pro_micro 7  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 1 — D7  */
+            , <&pro_micro 8  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 2 — D8  */
+            , <&pro_micro 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 3 — D9  */
+            , <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 4 — D10 */
+            ;
+
+        col-gpios
+            = <&pro_micro 21 GPIO_ACTIVE_HIGH>   /* Col 0 — A3  */
+            , <&pro_micro 20 GPIO_ACTIVE_HIGH>   /* Col 1 — A2  */
+            , <&pro_micro 19 GPIO_ACTIVE_HIGH>   /* Col 2 — A1  */
+            , <&pro_micro 18 GPIO_ACTIVE_HIGH>   /* Col 3 — A0  */
+            , <&pro_micro 15 GPIO_ACTIVE_HIGH>   /* Col 4 — D15 */
+            , <&pro_micro 14 GPIO_ACTIVE_HIGH>   /* Col 5 — D14 */
+            ;
+    };
+};

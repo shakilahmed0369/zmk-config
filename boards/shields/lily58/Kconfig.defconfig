@@ -1,0 +1,37 @@
+# Lily58 split keyboard — default configuration values
+#
+# These defaults are applied when the shield is selected.
+# Override any value in config/lily58.conf.
+
+if SHIELD_LILY58_LEFT || SHIELD_LILY58_RIGHT
+
+# Keyboard advertises as "Lily58" over BLE.
+config ZMK_KEYBOARD_NAME
+    default "Lily58"
+
+# Enable BLE for wireless split communication and BT profiles.
+config ZMK_BT
+    default y
+
+config ZMK_BT_MAX_CONN
+    default 5
+
+config ZMK_BT_MAX_PAIRED
+    default 5
+
+# Power-saving: enter deep sleep after ~15 minutes of inactivity.
+config ZMK_SLEEP
+    default y
+
+config ZMK_IDLE_SLEEP_TIMEOUT
+    default 900000
+
+endif # SHIELD_LILY58_LEFT || SHIELD_LILY58_RIGHT
+
+if SHIELD_LILY58_LEFT
+
+# The central (left) half surfaces as a USB HID device when plugged in.
+config ZMK_USB
+    default y
+
+endif # SHIELD_LILY58_LEFT
