@@ -26,6 +26,16 @@
 };
 
 /*
+ * Disable the battery voltage divider node so Zephyr does NOT claim
+ * P0.31 (ADC ch7) or P0.29 (power-enable GPIO) at boot.
+ * Without this, even CONFIG_ZMK_BATTERY_REPORTING=n leaves the
+ * vbatt driver active and those two column pins stay reserved.
+ */
+&vbatt {
+    status = "disabled";
+};
+
+/*
  * ── Optional: Rotary Encoder ────────────────────────────────────────────────
  * 1. Uncomment the block below to enable the left encoder.
  * 2. Adjust a-gpios / b-gpios if your wiring differs.

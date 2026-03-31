@@ -26,6 +26,11 @@
     col-offset = <6>;
 };
 
+/* Same vbatt disable as left half — frees P0.29 and P0.31 */
+&vbatt {
+    status = "disabled";
+};
+
 /*
  * ── Optional: Rotary Encoder ────────────────────────────────────────────────
  * 1. Uncomment the block below to enable the right encoder.
