@@ -19,7 +19,7 @@
  *   physical col 5 → combined col 5   (inner bracket: "[")
  */
 
-#include "lily58.dtsi"
+#include "lily58_hw.dtsi"
 
 &default_transform {
     col-offset = <0>;

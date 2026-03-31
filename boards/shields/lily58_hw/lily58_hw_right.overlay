@@ -20,7 +20,7 @@
  *   physical col 5 → combined col 11  (unused in row 4)
  */
 
-#include "lily58.dtsi"
+#include "lily58_hw.dtsi"
 
 &default_transform {
     col-offset = <6>;

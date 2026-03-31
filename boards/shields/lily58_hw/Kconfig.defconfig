@@ -1,0 +1,21 @@
+# Lily58 HW (hand-wired) split keyboard — default configuration values
+#
+# Only set defaults for symbols that ZMK already declares with a type.
+# BT profiles, USB, sleep timeout etc. belong in config/lily58_hw.conf.
+
+if SHIELD_LILY58_HW_LEFT || SHIELD_LILY58_HW_RIGHT
+
+config ZMK_KEYBOARD_NAME
+	default "Lily58 HW"
+
+config ZMK_SPLIT
+	default y
+
+endif # SHIELD_LILY58_HW_LEFT || SHIELD_LILY58_HW_RIGHT
+
+if SHIELD_LILY58_HW_LEFT
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif # SHIELD_LILY58_HW_LEFT
