@@ -34,8 +34,8 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)         RC(4,6) RC(3,6) 
             = <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 0 - Label 100 */
             , <&gpio0 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 1 - Label 011 */
             , <&gpio1 4  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 2 - Label 104 */
-            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 3 - Label 009 */
-            , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 4 - Label 106 */
+            , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 3 - Label 106 */
+            , <&gpio0 9  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 4 - Label 009 */
             ;
 
         /* Column GPIOs - Mapped to labels: 031, 029, 002, 115, 113, 111 */
