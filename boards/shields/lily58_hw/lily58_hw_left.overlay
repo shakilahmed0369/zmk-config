@@ -49,17 +49,17 @@
     status = "okay";
     clock-frequency = <I2C_BITRATE_STANDARD>;
 
-    oled_left: sh1106@3c {
-        compatible = "sinowealth,sh1106";
+    oled_left: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
         reg = <0x3c>;
         width = <128>;
-        height = <64>;
+        height = <32>;
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
-        multiplex-ratio = <63>;
+        multiplex-ratio = <31>;
         segment-remap;
-        com-invdir;
+        com-sequential;
         prechargep = <0x22>;
     };
 };
