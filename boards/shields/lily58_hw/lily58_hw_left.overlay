@@ -35,7 +35,30 @@
 // &left_encoder { status = "okay"; };
 
 /*
- * ── Optional: OLED Display ─────────────────────────────────────────────────
- * Display is now handled by the nice_oled shield from zmk-nice-oled module.
- * No manual OLED overlay needed here.
+ * ── OLED Display (SSD1306, 128×32, I2C address 0x3C) ───────────────────
+ * Display rendering handled by nice_oled shield module.
  */
+/ {
+    chosen {
+        zephyr,display = &oled_left;
+    };
+};
+
+&pro_micro_i2c {
+    status = "okay";
+
+    oled_left: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        prechargep = <0x22>;
+    };
+};
