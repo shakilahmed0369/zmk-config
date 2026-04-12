@@ -1,65 +1,78 @@
 {
-  "metadata": {
-    "version": 1,
-    "board": "lily58"
-  },
-  "layers": [
-    {
-      "name": "Base",
-      "bindings": [
-        "kp ESC",   "kp N1",  "kp N2",  "kp N3",  "kp N4",  "kp N5",
-        "kp N6",    "kp N7",  "kp N8",  "kp N9",  "kp N0",  "kp GRAVE",
+  "id": "lily58",
+  "name": "Lily58",
+  "layouts": {
+    "default_transform": {
+      "name": "default_transform",
+      "layout": [
+        { "row": 0, "col":  0, "x":  0.00, "y": 0.375 },
+        { "row": 0, "col":  1, "x":  1.00, "y": 0.375 },
+        { "row": 0, "col":  2, "x":  2.00, "y": 0.125 },
+        { "row": 0, "col":  3, "x":  3.00, "y": 0.000 },
+        { "row": 0, "col":  4, "x":  4.00, "y": 0.125 },
+        { "row": 0, "col":  5, "x":  5.00, "y": 0.250 },
 
-        "kp TAB",   "kp Q",   "kp W",   "kp E",   "kp R",   "kp T",
-        "kp Y",     "kp U",   "kp I",   "kp O",   "kp P",   "kp MINUS",
+        { "row": 0, "col":  6, "x":  8.00, "y": 0.250 },
+        { "row": 0, "col":  7, "x":  9.00, "y": 0.125 },
+        { "row": 0, "col":  8, "x": 10.00, "y": 0.000 },
+        { "row": 0, "col":  9, "x": 11.00, "y": 0.125 },
+        { "row": 0, "col": 10, "x": 12.00, "y": 0.375 },
+        { "row": 0, "col": 11, "x": 13.00, "y": 0.375 },
 
-        "kp LSHFT", "kp A",   "kp S",   "kp D",   "kp F",   "kp G",
-        "kp H",     "kp J",   "kp K",   "kp L",   "kp SEMI","kp SQT",
+        { "row": 1, "col":  0, "x":  0.00, "y": 1.375 },
+        { "row": 1, "col":  1, "x":  1.00, "y": 1.375 },
+        { "row": 1, "col":  2, "x":  2.00, "y": 1.125 },
+        { "row": 1, "col":  3, "x":  3.00, "y": 1.000 },
+        { "row": 1, "col":  4, "x":  4.00, "y": 1.125 },
+        { "row": 1, "col":  5, "x":  5.00, "y": 1.250 },
 
-        "kp LCTRL", "kp Z",   "kp X",   "kp C",   "kp V",   "kp B",
-        "kp LBKT",  "kp RBKT","kp N",   "kp M",   "kp COMMA","kp DOT",
+        { "row": 1, "col":  6, "x":  8.00, "y": 1.250 },
+        { "row": 1, "col":  7, "x":  9.00, "y": 1.125 },
+        { "row": 1, "col":  8, "x": 10.00, "y": 1.000 },
+        { "row": 1, "col":  9, "x": 11.00, "y": 1.125 },
+        { "row": 1, "col": 10, "x": 12.00, "y": 1.375 },
+        { "row": 1, "col": 11, "x": 13.00, "y": 1.375 },
 
-        "kp FSLH",  "kp RSHFT","kp LALT","kp LGUI","mo 1",
-        "kp SPACE", "kp ENTER","mo 2",   "kp BSPC","kp RGUI"
-      ]
-    },
-    {
-      "name": "Lower",
-      "bindings": [
-        "bt BT_CLR",         "bt BT_SEL 0", "bt BT_SEL 1", "bt BT_SEL 2", "bt BT_SEL 3", "bt BT_SEL 4",
-        "trans",             "trans",        "trans",        "trans",        "trans",        "trans",
+        { "row": 2, "col":  0, "x":  0.00, "y": 2.375 },
+        { "row": 2, "col":  1, "x":  1.00, "y": 2.375 },
+        { "row": 2, "col":  2, "x":  2.00, "y": 2.125 },
+        { "row": 2, "col":  3, "x":  3.00, "y": 2.000 },
+        { "row": 2, "col":  4, "x":  4.00, "y": 2.125 },
+        { "row": 2, "col":  5, "x":  5.00, "y": 2.250 },
 
-        "kp F1",  "kp F2",  "kp F3",  "kp F4",  "kp F5",  "kp F6",
-        "kp F7",  "kp F8",  "kp F9",  "kp F10", "kp F11", "kp F12",
+        { "row": 2, "col":  6, "x":  8.00, "y": 2.250 },
+        { "row": 2, "col":  7, "x":  9.00, "y": 2.125 },
+        { "row": 2, "col":  8, "x": 10.00, "y": 2.000 },
+        { "row": 2, "col":  9, "x": 11.00, "y": 2.125 },
+        { "row": 2, "col": 10, "x": 12.00, "y": 2.375 },
+        { "row": 2, "col": 11, "x": 13.00, "y": 2.375 },
 
-        "kp GRAVE","kp EXCL","kp AT",  "kp HASH","kp DLLR","kp PRCNT",
-        "kp CARET","kp AMPS","kp STAR","kp LPAR","kp RPAR","kp TILDE",
+        { "row": 3, "col":  0, "x":  0.00, "y": 3.375 },
+        { "row": 3, "col":  1, "x":  1.00, "y": 3.375 },
+        { "row": 3, "col":  2, "x":  2.00, "y": 3.125 },
+        { "row": 3, "col":  3, "x":  3.00, "y": 3.000 },
+        { "row": 3, "col":  4, "x":  4.00, "y": 3.125 },
+        { "row": 3, "col":  5, "x":  5.00, "y": 3.250 },
 
-        "trans",  "ext_power EP_ON","ext_power EP_OFF","ext_power EP_TOG","trans","trans",
-        "trans",  "trans",  "trans",  "kp MINUS","kp PLUS","kp LBKT",
+        { "row": 3, "col":  6, "x":  8.00, "y": 3.250 },
+        { "row": 3, "col":  7, "x":  9.00, "y": 3.125 },
+        { "row": 3, "col":  8, "x": 10.00, "y": 3.000 },
+        { "row": 3, "col":  9, "x": 11.00, "y": 3.125 },
+        { "row": 3, "col": 10, "x": 12.00, "y": 3.375 },
+        { "row": 3, "col": 11, "x": 13.00, "y": 3.375 },
 
-        "kp RBKT","kp PIPE","trans","trans","trans",
-        "trans",  "trans",  "trans","trans","trans"
-      ]
-    },
-    {
-      "name": "Raise",
-      "bindings": [
-        "trans","trans","trans","trans","trans","trans",
-        "trans","trans","trans","trans","trans","trans",
+        { "row": 4, "col":  0, "x":  3.00, "y": 4.250 },
+        { "row": 4, "col":  1, "x":  4.00, "y": 4.500 },
+        { "row": 4, "col":  2, "x":  5.00, "y": 4.750 },
+        { "row": 4, "col":  3, "x":  6.00, "y": 4.750 },
+        { "row": 4, "col":  4, "x":  7.00, "y": 4.750 },
 
-        "kp GRAVE","kp N1","kp N2","kp N3","kp N4","kp N5",
-        "kp N6",   "kp N7","kp N8","kp N9","kp N0","trans",
-
-        "kp F1","kp F2","kp F3","kp F4","kp F5","kp F6",
-        "trans","kp LEFT","kp DOWN","kp UP","kp RIGHT","trans",
-
-        "kp F7","kp F8","kp F9","kp F10","kp F11","kp F12",
-        "trans","trans","kp PLUS","kp MINUS","kp EQUAL","kp LBKT",
-
-        "kp RBKT","kp BSLH","trans","trans","trans",
-        "trans",  "trans",  "trans","trans","trans"
+        { "row": 4, "col":  5, "x":  8.00, "y": 4.750 },
+        { "row": 4, "col":  6, "x":  9.00, "y": 4.750 },
+        { "row": 4, "col":  7, "x": 10.00, "y": 4.750 },
+        { "row": 4, "col":  8, "x": 11.00, "y": 4.500 },
+        { "row": 4, "col":  9, "x": 12.00, "y": 4.250 }
       ]
     }
-  ]
+  }
 }
