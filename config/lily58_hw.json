@@ -1,74 +1,65 @@
 {
-  "id": "lily58_hw",
-  "name": "Lily58 (5-column)",
-  "layouts": {
-    "default_transform": {
-      "name": "default_transform",
-      "layout": [
-        { "row": 0, "col":  0, "x":     0, "y": 0.375 },
-        { "row": 0, "col":  1, "x":     1, "y": 0.375 },
-        { "row": 0, "col":  2, "x":     2, "y": 0.125 },
-        { "row": 0, "col":  3, "x":     3, "y":     0 },
-        { "row": 0, "col":  4, "x":     4, "y": 0.125 },
-        { "row": 0, "col":  5, "x":     5, "y":  0.25 },
-        { "row": 0, "col":  7, "x":     9, "y":  0.25 },
-        { "row": 0, "col":  8, "x":    10, "y": 0.125 },
-        { "row": 0, "col":  9, "x":    11, "y":     0 },
-        { "row": 0, "col": 10, "x":    12, "y": 0.125 },
-        { "row": 0, "col": 11, "x":    13, "y": 0.375 },
-        { "row": 0, "col": 12, "x":    14, "y": 0.375 },
+  "metadata": {
+    "version": 1,
+    "board": "lily58"
+  },
+  "layers": [
+    {
+      "name": "Base",
+      "bindings": [
+        "kp ESC",   "kp N1",  "kp N2",  "kp N3",  "kp N4",  "kp N5",
+        "kp N6",    "kp N7",  "kp N8",  "kp N9",  "kp N0",  "kp GRAVE",
 
-        { "row": 1, "col":  0, "x":     0, "y": 1.375 },
-        { "row": 1, "col":  1, "x":     1, "y": 1.375 },
-        { "row": 1, "col":  2, "x":     2, "y": 1.125 },
-        { "row": 1, "col":  3, "x":     3, "y":     1 },
-        { "row": 1, "col":  4, "x":     4, "y": 1.125 },
-        { "row": 1, "col":  5, "x":     5, "y":  1.25 },
-        { "row": 1, "col":  7, "x":     9, "y":  1.25 },
-        { "row": 1, "col":  8, "x":    10, "y": 1.125 },
-        { "row": 1, "col":  9, "x":    11, "y":     1 },
-        { "row": 1, "col": 10, "x":    12, "y": 1.125 },
-        { "row": 1, "col": 11, "x":    13, "y": 1.375 },
-        { "row": 1, "col": 12, "x":    14, "y": 1.375 },
+        "kp TAB",   "kp Q",   "kp W",   "kp E",   "kp R",   "kp T",
+        "kp Y",     "kp U",   "kp I",   "kp O",   "kp P",   "kp MINUS",
 
-        { "row": 2, "col":  0, "x":     0, "y": 2.375 },
-        { "row": 2, "col":  1, "x":     1, "y": 2.375 },
-        { "row": 2, "col":  2, "x":     2, "y": 2.125 },
-        { "row": 2, "col":  3, "x":     3, "y":     2 },
-        { "row": 2, "col":  4, "x":     4, "y": 2.125 },
-        { "row": 2, "col":  5, "x":     5, "y":  2.25 },
-        { "row": 2, "col":  7, "x":     9, "y":  2.25 },
-        { "row": 2, "col":  8, "x":    10, "y": 2.125 },
-        { "row": 2, "col":  9, "x":    11, "y":     2 },
-        { "row": 2, "col": 10, "x":    12, "y": 2.125 },
-        { "row": 2, "col": 11, "x":    13, "y": 2.375 },
-        { "row": 2, "col": 12, "x":    14, "y": 2.375 },
+        "kp LSHFT", "kp A",   "kp S",   "kp D",   "kp F",   "kp G",
+        "kp H",     "kp J",   "kp K",   "kp L",   "kp SEMI","kp SQT",
 
-        { "row": 3, "col":  0, "x":     0, "y": 3.375 },
-        { "row": 3, "col":  1, "x":     1, "y": 3.375 },
-        { "row": 3, "col":  2, "x":     2, "y": 3.125 },
-        { "row": 3, "col":  3, "x":     3, "y":     3 },
-        { "row": 3, "col":  4, "x":     4, "y": 3.125 },
-        { "row": 3, "col":  5, "x":     5, "y":  3.25 },
-        { "row": 3, "col":  7, "x":     9, "y":  3.25 },
-        { "row": 3, "col":  8, "x":    10, "y": 3.125 },
-        { "row": 3, "col":  9, "x":    11, "y":     3 },
-        { "row": 3, "col": 10, "x":    12, "y": 3.125 },
-        { "row": 3, "col": 11, "x":    13, "y": 3.375 },
-        { "row": 3, "col": 12, "x":    14, "y": 3.375 },
+        "kp LCTRL", "kp Z",   "kp X",   "kp C",   "kp V",   "kp B",
+        "kp LBKT",  "kp RBKT","kp N",   "kp M",   "kp COMMA","kp DOT",
 
-        { "row": 4, "col":  0, "x":     0, "y": 4.125 },
-        { "row": 4, "col":  1, "x":     1, "y": 4.125 },
-        { "row": 4, "col":  2, "x":     2, "y": 4.125 },
-        { "row": 4, "col":  3, "x":     3, "y": 4.125 },
-        { "row": 4, "col":  4, "x":     4, "y": 4.125 },
-        { "row": 4, "col":  7, "x":     9, "y": 4.125 },
-        { "row": 4, "col":  8, "x":    10, "y": 4.125 },
-        { "row": 4, "col":  9, "x":    11, "y": 4.125 },
-        { "row": 4, "col": 10, "x":    12, "y": 4.125 },
-        { "row": 4, "col": 11, "x":    13, "y": 4.125 }
+        "kp FSLH",  "kp RSHFT","kp LALT","kp LGUI","mo 1",
+        "kp SPACE", "kp ENTER","mo 2",   "kp BSPC","kp RGUI"
+      ]
+    },
+    {
+      "name": "Lower",
+      "bindings": [
+        "bt BT_CLR",         "bt BT_SEL 0", "bt BT_SEL 1", "bt BT_SEL 2", "bt BT_SEL 3", "bt BT_SEL 4",
+        "trans",             "trans",        "trans",        "trans",        "trans",        "trans",
+
+        "kp F1",  "kp F2",  "kp F3",  "kp F4",  "kp F5",  "kp F6",
+        "kp F7",  "kp F8",  "kp F9",  "kp F10", "kp F11", "kp F12",
+
+        "kp GRAVE","kp EXCL","kp AT",  "kp HASH","kp DLLR","kp PRCNT",
+        "kp CARET","kp AMPS","kp STAR","kp LPAR","kp RPAR","kp TILDE",
+
+        "trans",  "ext_power EP_ON","ext_power EP_OFF","ext_power EP_TOG","trans","trans",
+        "trans",  "trans",  "trans",  "kp MINUS","kp PLUS","kp LBKT",
+
+        "kp RBKT","kp PIPE","trans","trans","trans",
+        "trans",  "trans",  "trans","trans","trans"
+      ]
+    },
+    {
+      "name": "Raise",
+      "bindings": [
+        "trans","trans","trans","trans","trans","trans",
+        "trans","trans","trans","trans","trans","trans",
+
+        "kp GRAVE","kp N1","kp N2","kp N3","kp N4","kp N5",
+        "kp N6",   "kp N7","kp N8","kp N9","kp N0","trans",
+
+        "kp F1","kp F2","kp F3","kp F4","kp F5","kp F6",
+        "trans","kp LEFT","kp DOWN","kp UP","kp RIGHT","trans",
+
+        "kp F7","kp F8","kp F9","kp F10","kp F11","kp F12",
+        "trans","trans","kp PLUS","kp MINUS","kp EQUAL","kp LBKT",
+
+        "kp RBKT","kp BSLH","trans","trans","trans",
+        "trans",  "trans",  "trans","trans","trans"
       ]
     }
-  },
-  "sensors": []
+  ]
 }
