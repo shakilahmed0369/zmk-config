@@ -8,8 +8,9 @@
         compatible = "zmk,combos";
 
         mouse_layer_combo {
-            bindings = <&mo 3>;
+            bindings = <&to 3>;
             key-positions = <52 55>;
+            layers = <0>;
         };
     };
 
