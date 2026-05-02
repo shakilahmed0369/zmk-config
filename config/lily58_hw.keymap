@@ -7,9 +7,15 @@
     combos {
         compatible = "zmk,combos";
 
-        mouse_layer_combo {
+        fg_mouse_combo {
             bindings = <&to 3>;
-            key-positions = <52 55>;
+            key-positions = <28 29>;
+            layers = <0>;
+        };
+
+        zx_gaming_combo {
+            bindings = <&to 4>;
+            key-positions = <37 38>;
             layers = <0>;
         };
     };
@@ -43,7 +49,7 @@
             label = "RSE";
             bindings = <
 &kp F1        &kp F2  &kp F3  &kp F4  &kp F5  &kp F6                    &kp F7  &kp F8    &kp F9        &kp F10    &kp F11  &kp F12
-&trans        &trans  &trans  &trans  &trans  &trans                    &trans  &trans    &kp UP_ARROW  &trans     &trans   &trans
+&trans        &trans  &trans  &trans  &trans  &trans                    &to 3   &trans    &kp UP_ARROW  &trans     &trans   &trans
 &kp CAPSLOCK  &trans  &trans  &trans  &trans  &trans                    &trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans   &trans
 &trans        &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans        &trans     &trans   &trans
                               &trans  &trans  &trans  &trans    &trans  &trans  &trans    &trans
@@ -53,11 +59,22 @@
         mouse_layer {
             label = "MOU";
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans                    &trans  &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans                    &trans  &mmv MOVE_LEFT  &mmv MOVE_UP    &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans                    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans    &trans  &trans  &msc SCRL_UP    &msc SCRL_DOWN  &trans           &trans  &trans
-                        &trans     &trans     &to 0   &trans    &trans  &trans  &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans         &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &mmv MOVE_UP   &trans  &trans  &trans
+&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans              &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &msc SCRL_UP    &msc SCRL_DOWN  &trans  &trans  &trans
+                            &trans  &trans  &to 0   &trans    &trans  &trans  &trans          &trans
+            >;
+        };
+
+        gaming_layer {
+            label = "GAM";
+            bindings = <
+&kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6                          &kp F7      &kp F8      &kp F9       &kp F10     &kp F11     &kp F12
+&kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                           &trans      &kp C_VOL_UP &kp UP      &kp C_VOL_DN &kp C_MUTE  &trans
+&kp LSHFT &kp A     &kp S     &kp D     &kp F     &kp G                           &trans      &kp LEFT    &kp DOWN     &kp RIGHT   &trans      &trans
+&kp LCTRL &kp Z     &kp X     &kp C     &kp V     &kp B     &trans       &trans    &trans      &kp M       &trans       &trans      &trans      &trans
+                              &kp LALT  &kp LGUI  &kp LCTRL  &kp SPACE   &kp ENTER  &to 0      &kp BSPC    &trans
             >;
         };
     };
