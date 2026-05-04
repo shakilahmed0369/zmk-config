@@ -37,11 +37,11 @@
         lower_layer {
             label = "LOW";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans         &trans        &trans     &trans                &trans                 &kp DELETE
-&trans      &trans        &trans        &trans        &trans        &trans                          &trans         &trans        &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSPACE
-&kp PIPE    &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT                       &kp RS(SLASH)  &kp KP_EQUAL  &kp GRAVE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOUBLE_QUOTES
-&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &kp BACKSLASH  &kp PLUS      &kp TILDE  &kp LBKT              &kp RBKT               &kp MINUS
-                                        &trans        &trans        &trans        &trans    &trans  &trans         &trans        &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans         &trans     &trans     &trans                &trans                 &kp DELETE
+&trans      &trans        &trans        &trans        &trans        &trans                          &trans         &trans     &trans     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSPACE
+&kp PIPE    &kp EXCL      &kp AT        &kp HASH      &kp DLLR      &kp PRCNT                       &kp RS(SLASH)  &kp EQUAL  &kp GRAVE  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOUBLE_QUOTES
+&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &kp BACKSLASH  &kp PLUS   &kp TILDE  &kp LBKT              &kp RBKT               &kp MINUS
+                                        &trans        &trans        &trans        &trans    &trans  &trans         &trans     &trans
             >;
         };
 
@@ -59,22 +59,22 @@
         mouse_layer {
             label = "MOU";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans         &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &mmv MOVE_UP   &trans  &trans  &trans
-&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans              &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &msc SCRL_UP    &msc SCRL_DOWN  &trans  &trans  &trans
-                            &trans  &trans  &to 0   &trans    &trans  &trans  &trans          &trans
+&trans  &trans  &trans  &trans     &trans     &trans                    &trans  &trans          &trans          &trans           &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans                    &trans  &trans          &mmv MOVE_UP    &trans           &trans  &trans
+&trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans                    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans  &trans  &trans  &trans     &trans     &trans  &trans    &trans  &trans  &msc SCRL_UP    &msc SCRL_DOWN  &trans           &trans  &trans
+                        &trans     &trans     &to 0   &trans    &trans  &trans  &trans          &trans
             >;
         };
 
         gaming_layer {
             label = "GAM";
             bindings = <
-&kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6                          &kp F7      &kp F8      &kp F9       &kp F10     &kp F11     &kp F12
-&kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                           &trans      &kp C_VOL_UP &kp UP      &kp C_VOL_DN &kp C_MUTE  &trans
-&kp LSHFT &kp A     &kp S     &kp D     &kp F     &kp G                           &trans      &kp LEFT    &kp DOWN     &kp RIGHT   &trans      &trans
-&kp LCTRL &kp Z     &kp X     &kp C     &kp V     &kp B     &trans       &trans    &trans      &kp M       &trans       &trans      &trans      &trans
-                              &kp LALT  &kp LGUI  &kp LCTRL  &kp SPACE   &kp ENTER  &to 0      &kp BSPC    &trans
+&kp N1     &kp N2  &kp N3  &kp N4    &kp N5    &kp N6                             &kp F7  &kp F8        &kp F9    &kp F10       &kp F11     &kp F12
+&kp TAB    &kp Q   &kp W   &kp E     &kp R     &kp T                              &trans  &kp C_VOL_UP  &kp UP    &kp C_VOL_DN  &kp C_MUTE  &trans
+&kp LSHFT  &kp A   &kp S   &kp D     &kp F     &kp G                              &trans  &kp LEFT      &kp DOWN  &kp RIGHT     &trans      &trans
+&kp LCTRL  &kp Z   &kp X   &kp C     &kp V     &kp B      &trans       &trans     &trans  &kp M         &trans    &trans        &trans      &trans
+                           &kp LALT  &kp LGUI  &kp LCTRL  &kp SPACE    &kp ENTER  &to 0   &kp BSPC      &trans
             >;
         };
     };
