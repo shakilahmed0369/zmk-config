@@ -30,6 +30,12 @@ RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4) RC(3,5) RC(4,5)         RC(4,6) RC(3,6) 
         diode-direction = "col2row";
         wakeup-source;
 
+        /* ZMK v0.3.0 defaults to 5ms debounce on press AND release; the matrix scans
+         * every 1ms, so 5ms adds ~4ms of latency to every key event. 1ms is plenty
+         * for healthy switches - if a key ever double-types, raise release first. */
+        debounce-press-ms = <1>;
+        debounce-release-ms = <1>;
+
         /* Row GPIOs - Mapped to labels: 100, 011, 104, 009, 106 */
         row-gpios
             = <&gpio1 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row 0 - Label 100 */

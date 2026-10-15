@@ -11,6 +11,7 @@ manifest:
       import: app/west.yml
     - name: zmk-nice-oled
       remote: mctechnology17
-      revision: main
+      # main as of 2026-01-26; pinned so firmware builds can't drift under us.
+      revision: 46f824abb2bd41f1287c5c68abd14122af6042a3
   self:
     path: config
