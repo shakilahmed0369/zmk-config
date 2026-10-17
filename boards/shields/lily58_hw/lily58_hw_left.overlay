@@ -35,26 +35,32 @@
 // &left_encoder { status = "okay"; };
 
 /*
- * ── Optional: OLED Display (SSD1306, 128×32, I2C address 0x3C) ─────────────
- * Uncomment to enable the OLED on the left half.
- * Requires CONFIG_ZMK_DISPLAY=y in config/lily58.conf.
+ * ── OLED Display (SSD1306, 128×32, I2C address 0x3C) ───────────────────
+ * Display rendering handled by nice_oled shield module.
  */
-// &pro_micro_i2c {
-//     status = "okay";
-//
-//     oled_left: ssd1306@3c {
-//         compatible = "solomon,ssd1306fb";
-//         reg = <0x3c>;
-//         width = <128>;
-//         height = <32>;
-//         segment-offset = <0>;
-//         page-offset = <0>;
-//         display-offset = <0>;
-//         multiplex-ratio = <31>;
-//         segment-remap;
-//         com-invdir;
-//         com-sequential;
-//         prechargep = <0x22>;
-//         label = "OLED_LEFT";
-//     };
-// };
+/ {
+    chosen {
+        zephyr,display = &oled_left;
+    };
+};
+
+&pro_micro_i2c {
+    status = "okay";
+    /* SSD1306 supports 400kHz; each LVGL flush over I2C is ~4x shorter than at 100kHz. */
+    clock-frequency = <400000>;
+
+    oled_left: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        width = <128>;
+        height = <32>;
+        segment-offset = <0>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <31>;
+        segment-remap;
+        com-invdir;
+        com-sequential;
+        prechargep = <0x22>;
+    };
+};
