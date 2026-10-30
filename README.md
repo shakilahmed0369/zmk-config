@@ -86,7 +86,7 @@ Where the non-letter keys live:
 Think of it as **"everything you would normally press Shift for, plus F-keys and brackets"**.
 
 ```
- F11  F1  F2  F3  F4  F5          F6  F7  F8  F9  F10  F12
+  F1  F2  F3  F4  F5  F7          F8  F9  F10 F11 F12  DEL
   `   !   @   #   $   %           ^   &   *   (   )    _
   ~   |   [   ]   {   }           \   -   =   +   :    "
                                         <   >   ?
@@ -94,8 +94,9 @@ Think of it as **"everything you would normally press Shift for, plus F-keys and
 
 | What | Where |
 | --- | --- |
-| **F1 to F10** | Number row, same key as 1 to 0 (hold Lower + `1` = F1) |
-| **F11 / F12** | Far left / far right of the number row |
+| **F1 to F5, F7** | Left hand number row (`Esc` through `5`) |
+| **F8 to F12** | Right hand number row (`6` through `0`) |
+| **Delete** | Top-right key (`=`) |
 | **Shifted symbols** `! @ # $ %` and `^ & * ( )` | Directly under the number row, same columns as the digits |
 | **Backtick `` ` ``** | Lower + Tab key |
 | **Tilde `~`** | Lower + the left home-row key (Shift on Base) |
